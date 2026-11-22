@@ -131,19 +131,16 @@ Insights for Q1
 
 ## Q2: Visualization
 q2_data <- neighbourhoods |>
-  select(median_household_income,
-         median_monthly_rent,
-         pct_renters_30plus_shelter) |>
-  drop_na() |>
-  mutate(income_group = factor(ntile(median_household_income, 3),
-                               labels = c("Low", "Middle", "High")))
+  mutate(income_group = case_when(
+    median_household_income < 60000 ~ "Low",
+    median_household_income < 90000 ~ "Middle",
+    TRUE ~ "High"))
 
 ggplot(q2_data,
        aes(x = median_household_income,
            y = pct_renters_30plus_shelter)) +
   geom_point(aes(colour = income_group), size = 2, alpha = 0.8) +
   geom_smooth(method = "lm", se = FALSE, colour = "black", linewidth = 0.8) +
-  scale_x_continuous(labels = scales::dollar) +
   labs(title = "Housing Stress vs. Median Household Income",
        x = "Median household income ($)",
        y = "% of renters spending 30%+ on housing",
