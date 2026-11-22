@@ -141,7 +141,39 @@ ggplot(q2_data,
 
 ## Q3: Visualization
 
+```{r q1-plot}
+q1_data |>
+  ggplot(aes(x = median_household_income,
+             y = pct_parkland,
+             colour = density_group)) +
+  geom_point(alpha = 0.75, size = 1.8) +
+  geom_smooth(method = "lm", se = FALSE, linewidth = 0.8) +
+  scale_x_continuous(labels = scales::label_dollar()) +
+  labs(
+    title = "Household Income and Parkland in Toronto",
+    subtitle = "Neighbourhoods grouped by population density",
+    x = "Median household income (CAD)",
+    y = "Neighbourhood land classified as parkland (%)",
+    colour = "Population density"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
 ## Q3: Summary Table
+
+```{r q1-table}
+q1_data |>
+  group_by(density_group) |>
+  summarise(
+    `Number of neighbourhoods` = n(),
+    `Mean household income (CAD)` = round(mean(median_household_income), 0),
+    `Mean parkland (%)` = round(mean(pct_parkland), 2),
+    `Median parkland (%)` = round(median(pct_parkland), 2),
+    .groups = "drop"
+  ) |>
+  kable(caption = "Income and Parkland by Population-Density Group")
+```
 
 ## Question #4: \[Name - Question Statement\] (if applicable)
 
