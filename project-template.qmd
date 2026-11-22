@@ -38,7 +38,22 @@ out.width = "80%"
 
 ```{r load-data, echo=FALSE}
 ### Read in data
+toronto <- readr::read_csv("toronto_neighbourhoods_STA130.csv", show_col_types = FALSE)
 
+# Shared name for teammates using `neighbourhoods` in their code.
+neighbourhoods <- toronto
+
+# Question 3: neighbourhood population density and density tertiles.
+q3_data <- toronto |>
+  mutate(population_density = population / neighbourhood_area_km2) |>
+  select(neighbourhood, median_household_income, pct_parkland,
+         population_density) |>
+  drop_na() |>
+  mutate(density_group = factor(
+    ntile(population_density, 3),
+    levels = c(1, 2, 3),
+    labels = c("Low", "Medium", "High")
+  ))
 ```
 
 ## Introduction
@@ -188,7 +203,13 @@ q3_data |>
   ) |>
   kable(caption = "Income and Parkland by Population-Density Group")
 ```
+
 ## Insights for Q3
+
+```{r q3-correlations, include=FALSE}
+q3_income_r <- cor(q3_data$median_household_income, q3_data$pct_parkland)
+q3_density_r <- cor(q3_data$population_density, q3_data$pct_parkland)
+```
 
 The overall Pearson correlation between median household income and parkland percentage is approximately **0.038**, indicating almost no linear association across Toronto's 158 neighbourhoods. Thus, the data do not support a simple claim that higher-income neighbourhoods consistently have more parkland.
 
