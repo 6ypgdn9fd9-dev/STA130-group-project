@@ -133,6 +133,7 @@ ggplot(q2_data,
        x = "Median household income ($)",
        y = "% of renters spending 30%+ on housing",
        colour = "Income group")
+
 ## Q2: Summary Table
 
 ## Question #3: Emily Chen - Income Disparities and Green Space Distribution
