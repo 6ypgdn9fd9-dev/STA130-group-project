@@ -43,11 +43,11 @@ out.width = "80%"
 
 ## Introduction
 
-**Overall Theme:** \[State your unifying theme\]
+**Overall Theme:** \[High versus Low income households]
 
 **Research Goal:** \[What are you investigating?\]
 
-**Target Population:** \[Who/what is being studied?\]
+**Target Population:** \[Neighbourhoods in Toronto]
 
 **Audience:** \[Who is this for?\]
 
