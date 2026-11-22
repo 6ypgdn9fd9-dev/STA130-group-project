@@ -135,9 +135,22 @@ ggplot(q2_data,
        colour = "Income group")
 ## Q2: Summary Table
 
-## Question #3: \[Name - Question Statement\]
+## Question #3: Emily Chen - Income Disparities and Green Space Distribution
+Do neighbourhoods with higher median household incomes have a greater percentage of parkland, and does this relationship vary with population density?
 
 ## Q3: Variables & Approach
+**Variables used:**
+
+- `median_household_income` — explanatory variable.
+- `pct_parkland` — response variable.
+- `population_density` — additional explanatory variable calculated from population and neighbourhood area.
+
+**New variables/groups defined:**
+
+- `population_density = population / neighbourhood_area_km2` (people/km²).
+- `density_group` — low, medium, and high population density, formed by dividing the 158 neighbourhoods into three approximately equal-sized groups.
+
+**Approach:** We compare income and parkland percentages with a scatterplot, using colour and separate fitted lines for density groups. We summarize group sizes, average income, and average parkland, and calculate Pearson correlations to describe overall linear associations. These are observational neighbourhood-level associations, not causal effects.
 
 ## Q3: Visualization
 
