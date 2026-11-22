@@ -43,24 +43,29 @@ out.width = "80%"
 
 ## Introduction
 
-**Overall Theme:** \[High versus Low income households]
+**Overall Theme:** Income disparities between high- and low-income neighbourhoods in Toronto.
 
-**Research Goal:** \[What are you investigating?\]
+**Research Goal:** We investigate whether Toronto neighbourhoods with higher median household incomes have a greater percentage of land designated as parkland, and whether the income–parkland relationship differs across population-density levels. This helps us explore whether the distribution of neighbourhood green space is associated with socioeconomic conditions.
 
-**Target Population:** \[Neighbourhoods in Toronto]
+**Target Population:** The 158 Toronto neighbourhoods represented in the City of Toronto neighbourhood dataset. Each observation represents a neighbourhood, not an individual household.
 
-**Audience:** \[Who is this for?\]
+
+**Audience:** Toronto residents, urban planners, municipal policymakers, and researchers interested in socioeconomic and environmental inequalities.
 
 ## Data Summary
 
 **Key Variables:**
 
--   Variable 1: \[Description\]
--   Variable 2: \[Description\]
+-   `median_household_income`: Median annual household income in 2020 for Canadian dollars (quantitative).
+-   `pct_parkland`: Percentage of each neighbourhood's geographic area classified as parkland (quantitative).
+-   `population_density`: Residents per square kilometre (derived quantitative variable).
+
 
 **Data Wrangling:**
 
 -   \[Any transformations, new variables created\]
+-   Created `population_density` by dividing `population` by `neighbourhood_area_km2`.
+-   Created `density_group` using three approximately equal-sized groups (low, medium, high), based on neighbourhood population-density ranks.
 
 ## Question #1: \[Name - Question Statement\]
 
