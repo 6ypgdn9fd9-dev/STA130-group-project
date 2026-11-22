@@ -123,11 +123,18 @@ iris |>
 
 Insights for Q1
 
-## Question #2: \[Name - Question Statement\]
-
-\[Repeat structure from Q1\]
+## Question #2: Jocelyn Yao - To what extent are neighbourhood median household income and median monthly rent associated with the percentage of renters spending above 30% of income on housing?
 
 ## Q2: Variables & Approach
+Variables used:
+median_household_income — explanatory variable.
+median_monthly_rent — second explanatory variable.
+pct_renters_30plus_shelter — response variable.
+
+New variables/groups defined:
+income_group: low, middle, and high income neighbourhoods, defined from median_household_income (low: below $60,000; middle: $60,000 to below $90,000; high: $90,000 and above).
+
+Approach: We compare housing stress with income and with rent using two scatterplots, with points coloured by income group and one overall trend line on each. We summarize the number of neighbourhoods in each income group and the mean, median, and maximum percentage of renters spending 30%+ on housing.
 
 ## Q2: Visualization
 q2_data <- neighbourhoods |>
