@@ -146,6 +146,16 @@ ggplot(q2_data,
        y = "% of renters spending 30%+ on housing",
        colour = "Income group")
 
+ggplot(q2_data,
+       aes(x = median_monthly_rent,
+           y = pct_renters_30plus_shelter)) +
+  geom_point(aes(colour = income_group), size = 2, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE, colour = "black", linewidth = 0.8) +
+  labs(title = "Housing Stress vs. Median Monthly Rent",
+       x = "Median monthly rent ($)",
+       y = "% of renters spending 30%+ on housing",
+       colour = "Income group")
+
 ## Q2: Summary Table
 
 ## Question #3: Emily Chen - Income Disparities and Green Space Distribution
