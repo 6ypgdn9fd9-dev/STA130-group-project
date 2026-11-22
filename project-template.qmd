@@ -174,6 +174,14 @@ q3_data |>
   ) |>
   kable(caption = "Income and Parkland by Population-Density Group")
 ```
+## Insights for Q3
+
+The overall Pearson correlation between median household income and parkland percentage is approximately **0.038**, indicating almost no linear association across Toronto's 158 neighbourhoods. Thus, the data do not support a simple claim that higher-income neighbourhoods consistently have more parkland.
+
+Population density appears more relevant to parkland distribution. The overall correlation between population density and parkland percentage is approximately **−0.229**, a weak negative linear association. In the three density groups, low-density neighbourhoods have approximately **13.53%** parkland on average, compared with **9.95%** in medium-density neighbourhoods and **7.81%** in high-density neighbourhoods. Mean household income also declines across these groups (approximately **$96,885**, **$89,500**, and **$80,360**, respectively). These group comparisons are descriptive; the scatterplot's separate fitted lines allow us to explore whether the income–parkland association looks different within each density category.
+
+These findings suggest that population density is an important characteristic to consider when discussing neighbourhood differences in parkland. However, the analysis does not establish that income or density causes differences in parkland. In addition, `pct_parkland` measures land area designated as parkland, not park quality, proximity, or residents' actual access. The income variable refers to 2020, and the dataset combines sources from different periods, which should be considered when interpreting the results.
+
 
 ## Question #4: \[Name - Question Statement\] (if applicable)
 
