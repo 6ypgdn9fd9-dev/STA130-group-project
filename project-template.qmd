@@ -141,8 +141,8 @@ ggplot(q2_data,
 
 ## Q3: Visualization
 
-```{r q1-plot}
-q1_data |>
+```{r q3-plot}
+q3_data |>
   ggplot(aes(x = median_household_income,
              y = pct_parkland,
              colour = density_group)) +
@@ -162,8 +162,8 @@ q1_data |>
 
 ## Q3: Summary Table
 
-```{r q1-table}
-q1_data |>
+```{r q3-table}
+q3_data |>
   group_by(density_group) |>
   summarise(
     `Number of neighbourhoods` = n(),
