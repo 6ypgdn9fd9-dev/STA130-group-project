@@ -87,7 +87,7 @@ pct_renters_30plus_shelter: Percentage of renter households in each neighbourhoo
 -   \[Any transformations, new variables created\]
 -   Created `population_density` by dividing `population` by `neighbourhood_area_km2`.
 -   Created `density_group` using three approximately equal-sized groups (low, medium, high), based on neighbourhood population-density ranks.
--   Created income_group from median_household_income using fixed cutoffs: low: below $76,500; middle: $76,500 to below $94,750; high: $94,750 and above.
+-   Created 'income_group' from median_household_income using fixed cutoffs: low: below $76,500; middle: $76,500 to below $94,750; high: $94,750 and above.
 
 
 
