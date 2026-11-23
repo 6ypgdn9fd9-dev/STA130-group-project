@@ -218,6 +218,17 @@ ggplot(q2_data,
        colour = "Income group")
 
 ## Q2: Summary Table
+{r q2-table}
+q2_data |>
+  group_by(income_group) |>
+  summarise(
+    `Number of neighbourhoods` = n(),
+    `Mean (%)` = round(mean(pct_renters_30plus_shelter, na.rm = TRUE), 1),
+    `Median (%)` = round(median(pct_renters_30plus_shelter, na.rm = TRUE), 1),
+    `Max (%)` = round(max(pct_renters_30plus_shelter, na.rm = TRUE), 1),
+    .groups = "drop"
+  ) |>
+  kable(caption = "Table 1: Comparison of Housing Stress by Income Group")
 
 ## Question #3: Emily Chen - Income Disparities and Green Space Distribution
 Do neighbourhoods with higher median household incomes have a greater percentage of parkland, and does this relationship vary with population density?
