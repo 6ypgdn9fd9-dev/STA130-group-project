@@ -40,7 +40,7 @@ out.width = "80%"
 ### Read in data
 toronto <- readr::read_csv("toronto_neighbourhoods_STA130.csv", show_col_types = FALSE)
 
-# Shared name for teammates using `neighbourhoods` in their code.
+# Shared name for teammates using `neighbourhoods` in code.
 neighbourhoods <- toronto
 
 # Question 3: neighbourhood population density and density tertiles.
