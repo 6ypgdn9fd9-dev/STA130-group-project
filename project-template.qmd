@@ -1,5 +1,5 @@
 ---
-title: "Project Title"
+title: "Income and Living Standards Across Toronto's 158 Neighbourhoods"
 subtitle: "Project subtitle (if applicable)"
 author: "Emily Chen, Alex Ordonez, Jocelyn Yao, Beckett Liu| Group #E"
 date: 11/23/2026
