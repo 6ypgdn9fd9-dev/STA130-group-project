@@ -313,7 +313,13 @@ Q4_data |> ggplot(aes(x = factor (income_group), y = overdose_rate_2025)) +
           x = "Income group") 
               
 ## Q4: Summary Table
-
+Q4_data |> 
+  group_by('Income group' = income_group) |>
+  summerise( 
+  'neighbourhoods' = n(), 
+  'Median suicide related rate' = round(median(suicide_related_rate_2025), 1), 
+  'Median overdose rate' = round(median(overdose_rate_2025), 1) 
+) |>
 ## Overall Limitations
 
 It is optional to include this as a stand-alone section at the end, you could also choose to discuss this at the end of each research question
