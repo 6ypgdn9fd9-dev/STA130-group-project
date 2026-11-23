@@ -87,7 +87,7 @@ pct_renters_30plus_shelter: Percentage of renter households in each neighbourhoo
 -   \[Any transformations, new variables created\]
 -   Created `population_density` by dividing `population` by `neighbourhood_area_km2`.
 -   Created `density_group` using three approximately equal-sized groups (low, medium, high), based on neighbourhood population-density ranks.
--   Created income_group from median_household_income using fixed cutoffs: Low (below $60,000), Middle ($60,000 to below $90,000), and High ($90,000 and above).
+-   Created income_group from median_household_income using fixed cutoffs: low: below $76,500; middle: $76,500 to below $94,750; high: $94,750 and above.
 
 
 
@@ -196,15 +196,16 @@ median_monthly_rent — second explanatory variable.
 pct_renters_30plus_shelter — response variable.
 
 New variables/groups defined:
-income_group: low, middle, and high income neighbourhoods, defined from median_household_income (low: below $60,000; middle: $60,000 to below $90,000; high: $90,000 and above).
+income_group: low, middle, and high income neighbourhoods, defined from median_household_income (low: below $76,500; middle: $76,500 to below $94,750; high: $94,750 and above".)
 
 Approach: We compare housing stress with income and with rent using two scatterplots, with points coloured by income group and one overall trend line on each. We summarize the number of neighbourhoods in each income group and the mean, median, and maximum percentage of renters spending 30%+ on housing.
 
 ## Q2: Visualization
+```{r q2-plots, fig.width=11, fig.height=4.5, out.width="100%"}
 q2_data <- neighbourhoods |>
   mutate(income_group = case_when(
-    median_household_income < 60000 ~ "Low",
-    median_household_income < 90000 ~ "Middle",
+    median_household_income < 76500 ~ "Low",
+    median_household_income < 94750 ~ "Middle",
     TRUE ~ "High"))
 
 ggplot(q2_data,
@@ -226,9 +227,10 @@ ggplot(q2_data,
        x = "Median monthly rent ($)",
        y = "% of renters spending 30%+ on housing",
        colour = "Income group")
+```
 
 ## Q2: Summary Table
-{r q2-table}
+```{r q2-table}
 q2_data |>
   group_by(income_group) |>
   summarise(
@@ -239,6 +241,7 @@ q2_data |>
     .groups = "drop"
   ) |>
   kable(caption = "Table 1: Comparison of Housing Stress by Income Group")
+```
 
 ## Question #3: Emily Chen - Income Disparities and Green Space Distribution
 Do neighbourhoods with higher median household incomes have a greater percentage of parkland, and does this relationship vary with population density?
