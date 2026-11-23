@@ -70,10 +70,17 @@ q3_data <- toronto |>
 
 **Key Variables:**
 
--   `median_household_income`: Median annual household income in 2020 for Canadian dollars (quantitative).
--   `pct_parkland`: Percentage of each neighbourhood's geographic area classified as parkland (quantitative).
--   `population_density`: Residents per square kilometre (derived quantitative variable).
+median_household_income: Median annual household income in 2020 for Canadian dollars (quantitative).
 
+pct_parkland: Percentage of each neighbourhood's geographic area classified as parkland (quantitative).
+
+population_density: Residents per square kilometre (derived quantitative variable).
+
+median_household_income: Median annual household income in 2020 for Canadian dollars (quantitative).
+
+median_monthly_rent: Median monthly rent paid by renter households in Canadian dollars (quantitative).
+
+pct_renters_30plus_shelter: Percentage of renter households in each neighbourhood spending 30% or more of their income on shelter costs (quantitative)
 
 **Data Wrangling:**
 
