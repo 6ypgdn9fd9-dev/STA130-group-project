@@ -83,13 +83,17 @@ q3_data <- toronto |>
 
 ## Question #1: \[Name - Question Statement\]
 
-\[Clear statement of the research question\]
+Across Toronto’s 158 neighbourhoods, is post-secondary education associated with an increase in median household income and a decrease in the percentage of residents with low income?
+This question connects to the overarching theme by examining how higher education may impact the income and living standards of residents in Toronto.
 
 ## Q1: Variables & Approach
 
 **Variables used:**
 
--   \[List variables\]
+Variables used:
+Degree percentage: percentage of residents aged 25–64 with a university degree; the variable is created by adding the percentage of only bachelor’s degrees, master’s degrees, doctorate degrees, and medicine degrees.
+Median household income: median household income in Canadian dollars.
+Low income percentage: percentage of residents classified as “low income” by the after-tax Low-income Measure.
 
 **New variables/groups defined:**
 
@@ -98,30 +102,80 @@ q3_data <- toronto |>
 ## Q1: Visualization
 
 ```{r q1-plot}
-#Your plot code here 
-iris |>
-  ggplot(aes(x=Species, y=Sepal.Length)) +
-  geom_boxplot() +
-  ylab("Sepal Length")
+library(tidyverse)
+
+toronto <- read_csv("toronto_neighbourhoods_STA130.csv") |>
+  mutate(
+    degree_pct =
+      pct_bachelors_only_25_64 +
+      pct_masters_25_64 +
+      pct_doctorate_25_64 +
+      pct_deg_medicine_25_64
+  )
+
+# Plot 1
+ggplot(
+  toronto,
+  aes(x = degree_pct, y = median_household_income)
+) +
+  geom_point() +
+  geom_smooth(
+    method = "lm", formula = y ~ x,
+    se = FALSE, ) +
+
+  labs(
+    title = "University education and household income",
+    x = "Residents aged 25–64 with a university degree (%)",
+    y = "Median annual household income (CA$)",
+    ) 
+# Plot 2
+ggplot(
+  toronto,
+  aes(x = degree_pct, y = low_income_pct)
+) +
+  geom_point() +
+  geom_smooth(
+    method = "lm", formula = y ~ x,
+    se = FALSE) +
+  labs(
+    title = "University education and low income",
+    x = "Residents aged 25–64 with a university degree (%)",
+    y = "Residents with low income (%)",
+  )
+
 ```
 
 ## Q1: Summary Table
 
 ```{r q1-table}
-#Your summary table here
-
-# Here is an example of a nicely formatted table, using the kable function
-iris |>
-  group_by(Species) |>
-  summarise(
-    Count = n(),
-    `Avg Sepal Length` = round(mean(Sepal.Length), 1),
-    `Avg Petal Length` = round(mean(Petal.Length), 1)
+toronto |>
+  select(degree_pct, median_household_income, low_income_pct) |>
+  pivot_longer(
+    cols = everything(),
+    names_to = "Variable",
+    values_to = "Value"
   ) |>
-  kable(caption = "Comparison of Iris Species")
+  group_by(Variable) |>
+  summarise(
+    Count = 158,
+    Mean = round(mean(Value), 2),
+    Median = round(median(Value), 2),
+    SD = round(sd(Value), 2)
+  ) |>
+  knitr::kable(
+    caption = "Summary of Education and Income Across Toronto Neighbourhoods"
+  )
 ```
 
 Insights for Q1
+Neighbourhoods with a higher percentage of university graduates were typically associated with higher median household incomes, as shown by the positive sloped regression line.
+There is a high spread of incomes throughout the neighbourhoods with similar degree percentages, suggesting that there are many other factors that influence median income.
+The relationship between university education and the percentage of residents with low income was weak, with a nearly flat regression line.
+Overall, a higher percent of university degrees in a neighborhood was associated with a higher neighbourhood median income; however, the association to low-income percentages is minimal.
+As a remark, these results do not prove that earning a degree causes higher income or prevents low income, as they are associations.
+
+Limitations:
+We only know the percentage of people with a degree. This limits our information because some degrees may be associated with a higher income than others, so it is not a good basis for deciding on getting a degree, since the field of the degree matters.
 
 ## Question #2: Jocelyn Yao - To what extent are neighbourhood median household income and median monthly rent associated with the percentage of renters spending above 30% of income on housing?
 
@@ -294,3 +348,4 @@ It is optional to include this as a stand-alone section at the end, you could al
 **Acknowledgements:**
 
 -   \[Any acknowledgements, if applicable\]
+
