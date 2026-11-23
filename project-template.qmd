@@ -322,11 +322,9 @@ Q4_data |>
 ) |>
 ## Overall Limitations
 
-It is optional to include this as a stand-alone section at the end, you could also choose to discuss this at the end of each research question
-
 **Data Limitations:**
 
--   \[Limitation 1\]
+-   A limitation present in the data compared is the different years they were taken and observed. Both response variables (Suicide_related_rate_2025, overdose_rate_2025) are taken from 2025; however the explanatary values (median_household_income) has been taken from 2020. 
 -   \[Limitation 2\]
 
 **Future Directions:**
