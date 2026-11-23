@@ -240,7 +240,7 @@ q2_data |>
     `Max (%)` = round(max(pct_renters_30plus_shelter, na.rm = TRUE), 1),
     .groups = "drop"
   ) |>
-  kable(caption = "Table 1: Comparison of Housing Stress by Income Group")
+  kable(caption = "Comparison of Housing Stress by Income Group")
 ```
 
 ## Question #3: Emily Chen - Income Disparities and Green Space Distribution
