@@ -232,12 +232,32 @@ Population density appears more relevant to parkland distribution. The overall c
 These findings suggest that population density is an important characteristic to consider when discussing neighbourhood differences in parkland. However, the analysis does not establish that income or density causes differences in parkland. In addition, `pct_parkland` measures land area designated as parkland, not park quality, proximity, or residents' actual access. The income variable refers to 2020, and the dataset combines sources from different periods, which should be considered when interpreting the results.
 
 
-## Question #4: \[Name - Question Statement\] (if applicable)
+## Question #4: Alex Ordonez - Do lower income neighbourhoods in Toronto have an association of higher rates of suicide and overdose related incidents? 
 
 ## Q4: Variables & Approach
+Variables used: 
+median_household_income - explanatory variable 
+Income group (mutated) - explanatory variable this is a new variable created which splits median income into two different quatiles: "Lowest 25%", "Lower-middle", and "Highest 25%". 
+Suicide_related_rate_2025 - response variable 
+overdose_rate_2025 - response variable 
 
 ## Q4: Visualization
+Q4_data <- neighbourhoods |> 
+  mutate(income_group = case_when(median_household_income <= 76500 ~ "Lowest 25%",
+                                  median_household_income <= 84500 ~ "Lower Middle", 
+                                  median_household_income <= 94750 ~ "Upper Middle", 
+                                  TRUE ~ "Highest 25%" )) 
 
+Q4_data |> ggplot(aes(x = factor (income_group), y = suicide_related_rate_2025)) + 
+    geom_boxplot (color = "black", fill = "gray") + 
+    labs (y = "Suicide rate 2025", 
+          x = "Income group") 
+
+Q4_data |> ggplot(aes(x = factor (income_group), y = overdose_rate_2025)) + 
+    geom_boxplot (color = "black", fill = "gray") + 
+    labs (y = "Overdose rate 2025", 
+          x = "Income group") 
+              
 ## Q4: Summary Table
 
 ## Overall Limitations
