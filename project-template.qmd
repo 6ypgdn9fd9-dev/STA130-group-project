@@ -318,30 +318,35 @@ Suicide_related_rate_2025 - response variable
 overdose_rate_2025 - response variable 
 
 ## Q4: Visualization
+```{r q4-plots}
 Q4_data <- neighbourhoods |> 
   mutate(income_group = case_when(median_household_income <= 76500 ~ "Lowest 25%",
                                   median_household_income <= 84500 ~ "Lower Middle", 
                                   median_household_income <= 94750 ~ "Upper Middle", 
-                                  TRUE ~ "Highest 25%" )) 
+                                  TRUE ~ "Highest 25%")) 
 
-Q4_data |> ggplot(aes(x = factor (income_group), y = suicide_related_rate_2025)) + 
-    geom_boxplot (color = "black", fill = "gray") + 
-    labs (y = "Suicide rate 2025", 
-          x = "Income group") 
+Q4_data |> ggplot(aes(x = factor(income_group), y = suicide_related_rate_2025)) + 
+    geom_boxplot(color = "black", fill = "gray") + 
+    labs(y = "Suicide rate 2025", 
+         x = "Income group") 
 
-Q4_data |> ggplot(aes(x = factor (income_group), y = overdose_rate_2025)) + 
-    geom_boxplot (color = "black", fill = "gray") + 
-    labs (y = "Overdose rate 2025", 
-          x = "Income group") 
+Q4_data |> ggplot(aes(x = factor(income_group), y = overdose_rate_2025)) + 
+    geom_boxplot(color = "black", fill = "gray") + 
+    labs(y = "Overdose rate 2025", 
+         x = "Income group")
+```
               
 ## Q4: Summary Table
+```{r q4-table}
 Q4_data |> 
-  group_by('Income group' = income_group) |>
-  summerise( 
-  'neighbourhoods' = n(), 
-  'Median suicide related rate' = round(median(suicide_related_rate_2025), 1), 
-  'Median overdose rate' = round(median(overdose_rate_2025), 1) 
-) |>
+  group_by(`Income group` = income_group) |>
+  summarise( 
+    `Neighbourhoods` = n(), 
+    `Median suicide-related rate` = round(median(suicide_related_rate_2025), 1), 
+    `Median overdose rate` = round(median(overdose_rate_2025), 1)
+  ) |>
+  kable(caption = "Suicide-Related and Overdose Rates by Income Group")
+```
 ## Overall Limitations
 
 **Data Limitations:**
