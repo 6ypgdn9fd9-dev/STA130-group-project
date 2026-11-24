@@ -359,7 +359,7 @@ Q4_data |>
 -   This limitation can weaken the conclusion of the data as neighbourhoods can change in the span of 5 years, comparing two different years appart does not account for difference that can happen as well as 2020 being a unusual year, leading to atifially raises or lowered incomes compared to a normal year. To avoid this, trying to find data of the same years for both data sets, for example finding median income for 2025; this would remove the unusuality of that year as well as comparing two data sets of the same year. 
 
 ## Insights for Q4
-
+The results are seen to be quite intresting, the Lowest income neighbourhoods had the highest suicide related rate, seen with a results of 321.8 compared to 211.4 in the highest income group with close to double the median overdose rate. There was the clearest difference between lowest and high income neighbourhoods whereas the middle 50% had the most similar results. The overlap between groups show that there could be an association however there could be other stronger assoications present. 
 
 ## Overall Conclusion
 
@@ -368,18 +368,6 @@ Q4_data |>
 -   \[Finding 1 related to theme\]
 -   \[Finding 2 related to theme\]
 -   \[Finding 3 related to theme\]
-
-**Connection to Theme:**
-
-\[How findings relate back to unifying theme\]
-
-## References & Acknowledgements (if applicable)
-
-**References:**
-
--   \[Citation 1, if applicable\]
-
-**Acknowledgements:**
 
 -   \[Any acknowledgements, if applicable\]
 
