@@ -347,11 +347,14 @@ Q4_data |>
 **Data Limitations:**
 
 -   A limitation present in the data compared is the different years they were taken and observed. Both response variables (Suicide_related_rate_2025, overdose_rate_2025) are taken from 2025; however the explanatary values (median_household_income) has been taken from 2020. 
--   \[Limitation 2\]
+- A limitation that arises from median_household_income is this is the first year of the pandemic of COVID-19.
 
 **Future Directions:**
 
--   \[How these could be addressed\]
+-   This limitation can weaken the conclusion of the data as neighbourhoods can change in the span of 5 years, comparing two different years appart does not account for difference that can happen as well as 2020 being a unusual year, leading to atifially raises or lowered incomes compared to a normal year. To avoid this, trying to find data of the same years for both data sets, for example finding median income for 2025; this would remove the unusuality of that year as well as comparing two data sets of the same year. 
+
+## Insights for Q4
+
 
 ## Overall Conclusion
 
