@@ -313,7 +313,7 @@ Population density is more relevant to parkland distribution since the overall c
 ## Q4: Variables & Approach
 Variables used: 
 median_household_income - explanatory variable 
-Income group (mutated) - explanatory variable this is a new variable created which splits median income into two different quatiles: "Lowest 25%", "Lower-middle", and "Highest 25%". 
+Income group (mutated) - explanatory variable this is a new variable created which splits median income into four different quatiles: "Lowest 25%", "Lower-middle", and "Highest 25%". 
 Suicide_related_rate_2025 - response variable 
 overdose_rate_2025 - response variable 
 
@@ -329,7 +329,7 @@ Q4_data <- neighbourhoods |>
 
 Q4_data |> ggplot(aes(x = factor(income_group), y = suicide_related_rate_2025)) + 
     geom_boxplot(color = "black", fill = "gray") + 
-    labs(y = "Suicide rate 2025", 
+    labs(y = "Suicide-related rate 2025", 
          x = "Income group") 
 
 Q4_data |> ggplot(aes(x = factor(income_group), y = overdose_rate_2025)) + 
