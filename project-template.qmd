@@ -317,6 +317,8 @@ Income group (mutated) - explanatory variable this is a new variable created whi
 Suicide_related_rate_2025 - response variable 
 overdose_rate_2025 - response variable 
 
+Approach: The approach taken for this question was spliting all of Torontos 158 neighbourhoods into different income groups (quatiles) which was based on their median household income in 2020. Then, these groups were compared to both suicide and overdose rates across the neighbourhoods in the year 2025. These groups were compared using boxplots, summarizing the number of neighbourhoods and the mediate rate in each group. Medians were used becuase some naighbourhoods have a higher rate which would artifically pull averages up. 
+
 ## Q4: Visualization
 ```{r q4-plots}
 Q4_data <- neighbourhoods |> 
