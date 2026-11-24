@@ -365,9 +365,9 @@ The results are seen to be quite intresting, the Lowest income neighbourhoods ha
 
 **Key Findings:**
 
--   \[Finding 1 related to theme\]
--   \[Finding 2 related to theme\]
--   \[Finding 3 related to theme\]
+-  Neighbourhoods with a higher percentage of university graduates tend to have higher median household incomes, but their link to the percentage of residents with low income is weak.
+-   Housing stress was common in every income group, with about 37% to 40% of renters spending 30%+ of their income on housing. Low-income neighbourhoods did not have a higher average than high-income ones, although a few low-income neighbourhoods were much higher, for example some went up to 61.7%.
+-   Median household income had almost no linear association with parkland (correlation of about 0.04). Population density mattered more: low-density neighbourhoods averaged about 13.5% parkland, compared with 9.9% in medium-density and 7.8% in high-density neighbourhoods.
 
--   \[Any acknowledgements, if applicable\]
+-   Lower-income neighbourhoods had higher suicide-related and overdose rates. The lowest-income group had a median suicide-related rate of 321.8 vs. 211.4 in the highest-income group, and a median overdose rate of 51.6 vs. 25.4, about double.
 
